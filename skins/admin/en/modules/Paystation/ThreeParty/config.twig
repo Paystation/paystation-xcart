@@ -1,0 +1,46 @@
+<table cellspacing="1" cellpadding="5" class="settings-table">
+    <tr>
+        <td class="setting-name">
+            <label for="settings_login">{t(#Paystation PaystationID#)}</label>
+        </td>
+        <td>
+            <input type="text" id="settings_PaystationID" name="settings[PaystationID]"
+                   value="{paymentMethod.getSetting(#PaystationID#)}" class="validate[required,maxSize[255]]"/>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="setting-name">
+            <label for="settings_key">{t(#Paystation Gateway#)}</label>
+        </td>
+        <td>
+            <input type="text" id="settings_Gateway" name="settings[Gateway]"
+                   value="{paymentMethod.getSetting(#Gateway#)}" class="validate[required,maxSize[255]]"/>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="setting-name">
+            <label for="settings_mode">{t(#Test/Live mode#)}</label>
+        </td>
+        <td>
+            <widget
+                    class="\XLite\View\FormField\Select\TestLiveMode"
+                    fieldId="settings_TestMode"
+                    fieldName="settings[TestMode]"
+                    fieldOnly=true
+                    value="{paymentMethod.getSetting(#TestMode#)}"/>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" class="note">
+            {t(#The return URL is#)}:<br>
+            {getShopURL(#?target=payment_return&txn_id_name=txnId#)}
+            <br><br>
+            {t(#Also send your IP address to info@paystation.co.nz, as this module uses the #)} <br>
+            {t(# Remote Lookup (Quick) Interface API and is IP limited.#)}
+
+        </td>
+    </tr>
+</table>

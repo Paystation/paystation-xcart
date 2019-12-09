@@ -1,0 +1,23 @@
+#
+# Paystation Payment module for X-Cart 5.0.13
+#
+#
+# @category  X-Cart 5
+# @author    Paystation Ltd <info@paystation.co.nz>
+# @copyright Copyright (c) 2014 Paystation Ltd <info@paystation.co.nz>. All rights reserved
+# @license   http://www.x-cart.com/license-agreement.html X-Cart 5 License Agreement
+# @link      http://www.paystation.co.nz
+
+XLite\Model\Payment\Method:
+ - service_name: Paystation
+   class: 'Module\Paystation\ThreeParty\Model\Payment\Processor\PaystationProcessor'
+   type: C
+   translations:
+     - code: en
+       name: Paystation Three-party payment module
+   settings:
+     - name: PaystationID
+     - name: Gateway     
+     - name: TestMode
+       value: test
+      
